@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const CourseItem = ({ course, onToggleFavorite, isLoading }) => {
   return (
-    <div className={`bg-white rounded-lg shadow-md overflow-hidden cursor-${isLoading ? 'not-allowed' : 'pointer'}`} onClick={() => onToggleFavorite(course.id)}>
+    <div className='bg-white rounded-lg shadow-md overflow-hidden cursor-pointer' onClick={() => onToggleFavorite(course.id)}>
       <img className="w-full h-48 object-cover" src={course.instructor_image_url} alt={course.instructor_name} />
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{course.title}</h3>

@@ -29,9 +29,12 @@ function useCourses() {
 
   const handleToggleFavorite = async (courseId) => {
     setIsUpdatingFavorite(true);
+    setShowNotification(false);
+    // is course favorite?
+    const course = courses.find((c) => c.id === courseId);
 
     try {
-      if (courses.favorite) {
+      if (course.favorite) {
         await removeFavorite(userEmail, courseId);
         setShowNotification(true);
       } else {
